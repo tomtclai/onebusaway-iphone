@@ -168,6 +168,7 @@
 		669B2F7E1AEBFEBF00CF2367 /* OBARegionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBARegionHelper.h; sourceTree = "<group>"; };
 		669B2F7F1AEBFEBF00CF2367 /* OBARegionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBARegionHelper.m; sourceTree = "<group>"; };
 		669B2F8B1AEC049D00CF2367 /* libOneBusAwaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOneBusAwaySDK.a; path = "sdk/build/Debug-iphoneos/libOneBusAwaySDK.a"; sourceTree = "<group>"; };
+		77B467F81BAC7C00007B60EE /* OneBusAway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = OneBusAway.entitlements; path = OneBusAway/OneBusAway.entitlements; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923FE67E176082A7009AFDE8 /* UITableViewController+oba_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+oba_Additions.h"; sourceTree = "<group>"; };
 		923FE67F176082A7009AFDE8 /* UITableViewController+oba_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+oba_Additions.m"; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 		29B97314FDCFA39411CA2CEA /* org.onebusaway.iphone */ = {
 			isa = PBXGroup;
 			children = (
+				77B467F81BAC7C00007B60EE /* OneBusAway.entitlements */,
 				669B2D5A1AEBE63800CF2367 /* OneBusAwaySDK.xcodeproj */,
 				932BE4901AB66D320011F2FB /* ui */,
 				934446791AB10B1D005B3333 /* location */,
@@ -804,9 +806,13 @@
 				ORGANIZATIONNAME = OneBusAway;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = DPRFY9YDG3;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
 							};
 						};
 					};
@@ -1122,6 +1128,7 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = OneBusAway/OneBusAway.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1181,6 +1188,7 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = OneBusAway/OneBusAway.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -1251,6 +1259,16 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libz",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/MKiCloudSync\"",
+					"\"${PODS_ROOT}/Headers/Public/MarqueeLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/TWSReleaseNotesView\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "OneBusAway Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1290,6 +1308,16 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libz",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/MKiCloudSync\"",
+					"\"${PODS_ROOT}/Headers/Public/MarqueeLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/TWSReleaseNotesView\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "OneBusAway Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1330,6 +1358,16 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libz",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/MKiCloudSync\"",
+					"\"${PODS_ROOT}/Headers/Public/MarqueeLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/TWSReleaseNotesView\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "OneBusAway Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1370,6 +1408,16 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libz",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/MKiCloudSync\"",
+					"\"${PODS_ROOT}/Headers/Public/MarqueeLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/TWSReleaseNotesView\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "OneBusAway Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1487,6 +1535,7 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = OneBusAway/OneBusAway.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1562,6 +1611,7 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = OneBusAway/OneBusAway.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;

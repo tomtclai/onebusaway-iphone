@@ -33,6 +33,7 @@
 #import "OBAReleaseNotesManager.h"
 
 #import "OBAAnalytics.h"
+#import "MKiCloudSync.h"
 
 static NSString *kOBASelectedTabIndexDefaultsKey = @"OBASelectedTabIndexDefaultsKey";
 static NSString *kOBAShowExperimentalRegionsDefaultsKey = @"kOBAShowExperimentalRegionsDefaultsKey";
@@ -189,6 +190,8 @@ static NSString *const kAllowTracking = @"allowTracking";
 
     [self _constructUI];
 
+    [MKiCloudSync start];
+    
     return YES;
 }
 
